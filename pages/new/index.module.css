@@ -1,3 +1,8 @@
-label {
-    display: block;
+.form-container {
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.form-container > div {
+    margin-bottom: 15px;
 }

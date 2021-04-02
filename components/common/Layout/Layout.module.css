@@ -1,12 +1,36 @@
-.registration-container {
+.layout-container {
     max-width: 100%;
     display: grid;
     grid-template-columns: 250px 950px;
     justify-content: center;
     background-color: var(--color-background);
     color: var(--color-text-secondary);
-    min-height: 100%;
-    margin-top: 60px;
+}
+
+.navigation-bar {
+    padding: 20px;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--color-text);
+    height: 80px;
+}
+
+.navigation-bar h1 {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+}
+
+.navigation-bar li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navigation-bar li:first-child {
+    margin-right: 15px;
 }
 
 .steps {
@@ -23,5 +47,9 @@
 .main-content {
     background-color: var(--color-background-secondary);
     border-radius: 20px;
-    margin-bottom: 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
 }

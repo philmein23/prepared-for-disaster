@@ -15,6 +15,8 @@
   --color-gray-800: hsl(210deg,20%,77%);
   --color-gray-900: hsl(210deg,25%,88%);
   --color-gray-1000: hsl(210deg,25%,96%);
+  --color-btn-primary: hsl(160deg,100%,40%);
+  --color-btn-primary-hover: hsl(160deg,100%,25%);
 }
 
 html,
@@ -40,6 +42,13 @@ a {
   height: 100%;
 }
 
+
+.active {
+  width: fit-content;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--color-gray-1000);
+}
+
 label {
   display: block;
   letter-spacing: 1.5px;
@@ -54,4 +63,18 @@ input, textarea {
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid var(--color-gray-800);
+}
+
+.btn-primary {
+  padding: 10px 15px;
+  border: 0;
+  background-color: var(--color-btn-primary);
+  border-radius: 4px;
+  color: var(--color-text);
+  letter-spacing: 1.2px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-btn-primary-hover);
 }

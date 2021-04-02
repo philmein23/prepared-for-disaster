@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form';
+import { useStoreActions } from '../../hooks';
+import { useRouter } from 'next/router';
 
 import style from './index.module.css';
 
@@ -6,17 +8,23 @@ interface Inputs {
     firstName: string;
     lastName: string;
     address: string;
+    state: string;
+    country: string;
 }
 
-const NewRegistration = () => {
+const FirstStep = () => {
+    const updateUserInfo = useStoreActions(actions => actions.userInfo.updateUserInfo);
     const { register, handleSubmit } = useForm<Inputs>();
+    const router = useRouter();
 
     const onSubmit = (data) => {
-        console.log(data);
+        updateUserInfo(data);
+
+        router.push('/new/step2');
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className={style['form-container']} onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label htmlFor="first-name">First Name</label>
                 <input type="text" id="first-name" {...register('firstName', { required: true })} />
@@ -27,12 +35,20 @@ const NewRegistration = () => {
             </div>
             <div>
                 <label htmlFor="address">Address</label>
-                <textarea id="address" {...register('address', { required: true})}></textarea>
+                <textarea id="address" {...register('address', { required: true })}></textarea>
+            </div>
+            <div>
+                <label htmlFor="state">State</label>
+                <input type="text" id="state" {...register('state', { required: true })} />
+            </div>
+            <div>
+                <label htmlFor="country">Country</label>
+                <input type="text" id="country" {...register('country', { required: true })} />
             </div>
 
-            <button type="submit">Submit</button>
+            <button className="btn-primary" type="submit">Next</button>
         </form>
     )
 }
 
-export default NewRegistration;
+export default FirstStep;
