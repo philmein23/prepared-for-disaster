@@ -1,29 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
 
 :root {
-  --color-background: hsl(210deg,15%,6.25%);
-  --color-background-secondary: hsl(225deg,25%,97%);
-  --color-text: hsl(210deg,10%,90%);
-  --color-text-secondary: hsl(222deg,22%,5%);
-  --color-gray-100: hsl(210deg,15%,20%);
-  --color-gray-200: hsl(210deg,15%,25%);
-  --color-gray-300: hsl(210deg,10%,40%);
-  --color-gray-400: hsl(210deg,9%,45%);
-  --color-gray-500: hsl(210deg,8%,50%);
-  --color-gray-600: hsl(210deg,12%,55%);
-  --color-gray-700: hsl(210deg,14%,66%);
-  --color-gray-800: hsl(210deg,20%,77%);
-  --color-gray-900: hsl(210deg,25%,88%);
-  --color-gray-1000: hsl(210deg,25%,96%);
-  --color-btn-primary: hsl(160deg,100%,40%);
-  --color-btn-primary-hover: hsl(160deg,100%,25%);
+  --color-background: hsl(210deg, 15%, 6.25%);
+  --color-background-secondary: hsl(225deg, 25%, 97%);
+  --color-text: hsl(210deg, 10%, 90%);
+  --color-text-secondary: hsl(222deg, 22%, 5%);
+  --color-gray-100: hsl(210deg, 15%, 20%);
+  --color-gray-200: hsl(210deg, 15%, 25%);
+  --color-gray-300: hsl(210deg, 10%, 40%);
+  --color-gray-400: hsl(210deg, 9%, 45%);
+  --color-gray-500: hsl(210deg, 8%, 50%);
+  --color-gray-600: hsl(210deg, 12%, 55%);
+  --color-gray-700: hsl(210deg, 14%, 66%);
+  --color-gray-800: hsl(210deg, 20%, 77%);
+  --color-gray-900: hsl(210deg, 25%, 88%);
+  --color-gray-1000: hsl(210deg, 25%, 96%);
+  --color-btn-primary: hsl(160deg, 100%, 40%);
+  --color-btn-primary-hover: hsl(160deg, 100%, 25%);
+  --color-btn-secondary: hsl(340deg, 95%, 60%);
+  --color-btn-secondary-hover: hsl(340deg, 95%, 40%);
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   height: 100%;
   background-color: var(--color-background);
   color: var(--color-text);
@@ -42,7 +44,6 @@ a {
   height: 100%;
 }
 
-
 .active {
   width: fit-content;
   padding-bottom: 8px;
@@ -58,7 +59,8 @@ button {
   font-family: inherit;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px 10px;
   font-size: 16px;
   border-radius: 5px;
@@ -77,4 +79,18 @@ input, textarea {
 
 .btn-primary:hover {
   background-color: var(--color-btn-primary-hover);
+}
+
+.btn-secondary {
+  padding: 10px 15px;
+  border: 0;
+  background-color: var(--color-btn-secondary);
+  border-radius: 4px;
+  color: var(--color-text);
+  letter-spacing: 1.2px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-btn-secondary-hover);
 }

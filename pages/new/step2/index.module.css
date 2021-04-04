@@ -1,0 +1,23 @@
+.form-container {
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.form-container > .add-btn {
+  margin-right: 10px;
+}
+
+.field-input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.field-input-container > div:first-child {
+  margin-right: 10px;
+}
+
+.field-input-container .btn-remove {
+  margin-left: 15px;
+  margin-top: 25px;
+}
