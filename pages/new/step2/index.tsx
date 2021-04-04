@@ -1,13 +1,18 @@
 import { useForm, useFieldArray } from "react-hook-form";
+import { useStoreActions, useStoreState } from "../../../hooks";
+import { LovedOne } from "../../../model/userInfo";
 import style from "./index.module.css";
 
 interface Inputs {
-  firstName: string;
-  lastName: string;
+  lovedOnes: LovedOne[];
 }
 
 const Step2 = () => {
-  const { register, handleSubmit, control } = useForm({
+  const currentState = useStoreState((state) => state.userInfo);
+  const updateUserInfo = useStoreActions(
+    (actions) => actions.userInfo.updateUserInfo
+  );
+  const { register, handleSubmit, control } = useForm<Inputs>({
     defaultValues: {
       lovedOnes: [{ firstName: "Phil", lastName: "Nguyen" }],
     },
@@ -19,6 +24,8 @@ const Step2 = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    currentState.newUser.lovedOnes = data.lovedOnes;
+    updateUserInfo(currentState.newUser);
   };
 
   return (

@@ -1,11 +1,17 @@
 import { Action, action } from "easy-peasy";
 
+export interface LovedOne {
+  firstName: string;
+  lastName: string;
+}
+
 export interface UserInfo {
   firstName: string;
   lastName: string;
   address: string;
   state: string;
   country: string;
+  lovedOnes: LovedOne[];
 }
 
 export interface UsersInfoModel {
