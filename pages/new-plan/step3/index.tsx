@@ -27,7 +27,7 @@ const Step3 = () => {
   const goBack = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    router.push("/new/step2");
+    router.push("/new-plan/step2");
   };
 
   const onSubmit = (data) => {

@@ -21,17 +21,17 @@ const Layout = ({ children }: LayoutProps) => {
             </nav>
             <div className={style.steps}>
                 <ul>
-                    <li className={router.asPath === "/new" ? "active" : ''}>
+                    <li className={router.asPath === "/new-plan" ? "active" : ''}>
                         <Link href="/new">User Information</Link>
                     </li>
-                    <li className={router.asPath === "/new/step2" ? "active" : ''}>
-                        <Link href="/new/step2">Loved Ones</Link>
+                    <li className={router.asPath === "/new-plan/step2" ? "active" : ''}>
+                        <Link href="/new-plan/step2">Loved Ones</Link>
                     </li>
-                    <li className={router.asPath === "/new/step3" ? "active" : ''}>
-                        <Link href="/new/step3">Rally Points</Link>
+                    <li className={router.asPath === "/new-plan/step3" ? "active" : ''}>
+                        <Link href="/new-plan/step3">Rally Points</Link>
                     </li>
-                    <li className={router.asPath === "/new/step4" ? "active" : ''}>
-                        <Link href="/new/step4">Emergency Kit</Link>
+                    <li className={router.asPath === "/new-plan/step4" ? "active" : ''}>
+                        <Link href="/new-plan/step4">Emergency Kit</Link>
                     </li>
                 </ul>
             </div>

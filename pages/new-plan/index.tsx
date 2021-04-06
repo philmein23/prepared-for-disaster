@@ -22,7 +22,7 @@ const FirstStep = () => {
   const onSubmit = (data) => {
     updateUserInfo(data);
 
-    router.push("/new/step2");
+    router.push("/new-plan/step3");
   };
 
   return (

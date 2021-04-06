@@ -28,14 +28,14 @@ const Step2 = () => {
   const goBack = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    router.push("/new");
+    router.push("/new-plan");
   };
 
   const onSubmit = (data) => {
     currentState.newUser.lovedOnes = data.lovedOnes;
     updateUserInfo(currentState.newUser);
 
-    router.push("/new/step3");
+    router.push("/new-plan/step3");
   };
 
   return (
