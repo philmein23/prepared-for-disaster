@@ -1,18 +1,20 @@
+import { useRouter } from "next/router";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useStoreActions, useStoreState } from "../../../hooks";
 import { LovedOne } from "../../../model/userInfo";
 import style from "./index.module.css";
 
-interface Inputs {
+interface Step2Inputs {
   lovedOnes: LovedOne[];
 }
 
 const Step2 = () => {
+  const router = useRouter();
   const currentState = useStoreState((state) => state.userInfo);
   const updateUserInfo = useStoreActions(
     (actions) => actions.userInfo.updateUserInfo
   );
-  const { register, handleSubmit, control } = useForm<Inputs>({
+  const { register, handleSubmit, control } = useForm<Step2Inputs>({
     defaultValues: {
       lovedOnes: [{ firstName: "Phil", lastName: "Nguyen" }],
     },
@@ -23,14 +25,18 @@ const Step2 = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     currentState.newUser.lovedOnes = data.lovedOnes;
     updateUserInfo(currentState.newUser);
+
+    router.push("/new/step3");
   };
 
   return (
     <form className={style["form-container"]} onSubmit={handleSubmit(onSubmit)}>
-      <h2>Add your loved ones</h2>
+      <div>
+          <h2>Loved Ones</h2>
+          <p>Add any known family members or loved ones.</p>
+      </div>
       {fields.map((field, index) => (
         <div className={style["field-input-container"]} key={field.id}>
           {console.log(field)}
