@@ -1,13 +1,22 @@
 import style from "./Address.module.css";
 
-const Address = ({ register }) => {
+const Address = ({ register, index = null, context = null }) => {
+  let input =
+    context != null && index !== null ? `${context}.${index.toString()}.` : "";
   return (
     <>
       <div>
-        <label htmlFor="address">Address</label>
+        <label htmlFor="address">Street</label>
         <textarea
           id="address"
-          {...register("address", { required: true })}
+          {...register(`${input}address.street`, { required: true })}
+        ></textarea>
+      </div>
+      <div>
+        <label htmlFor="address">City</label>
+        <textarea
+          id="address"
+          {...register(`${input}address.city`, { required: true })}
         ></textarea>
       </div>
       <div>
@@ -15,7 +24,7 @@ const Address = ({ register }) => {
         <input
           type="text"
           id="state"
-          {...register("state", { required: true })}
+          {...register(`${input}address.state`, { required: true })}
         />
       </div>
       <div>
@@ -23,7 +32,7 @@ const Address = ({ register }) => {
         <input
           type="text"
           id="zipcode"
-          {...register("zipcode", { required: true })}
+          {...register(`${input}address.zipcode`, { required: true })}
         />
       </div>
       <div>
@@ -31,7 +40,7 @@ const Address = ({ register }) => {
         <input
           type="text"
           id="country"
-          {...register("country", { required: true })}
+          {...register(`${input}address.country`, { required: true })}
         />
       </div>
     </>

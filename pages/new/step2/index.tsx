@@ -1,10 +1,11 @@
+import { MouseEvent } from 'react';
 import { useRouter } from "next/router";
 import { useForm, useFieldArray } from "react-hook-form";
 import { useStoreActions, useStoreState } from "../../../hooks";
 import { LovedOne } from "../../../model/userInfo";
 import style from "./index.module.css";
 
-interface Step2Inputs {
+interface StepTwoInputs {
   lovedOnes: LovedOne[];
 }
 
@@ -14,7 +15,7 @@ const Step2 = () => {
   const updateUserInfo = useStoreActions(
     (actions) => actions.userInfo.updateUserInfo
   );
-  const { register, handleSubmit, control } = useForm<Step2Inputs>({
+  const { register, handleSubmit, control } = useForm<StepTwoInputs>({
     defaultValues: {
       lovedOnes: [{ firstName: "Phil", lastName: "Nguyen" }],
     },
@@ -23,6 +24,12 @@ const Step2 = () => {
     control,
     name: "lovedOnes",
   });
+
+  const goBack = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+
+    router.push("/new");
+  };
 
   const onSubmit = (data) => {
     currentState.newUser.lovedOnes = data.lovedOnes;
@@ -75,6 +82,9 @@ const Step2 = () => {
         onClick={() => append({ firstName: "", lastName: "" })}
       >
         Add
+      </button>
+      <button className="btn-primary" onClick={goBack}>
+        Previous
       </button>
       <button className="btn-primary" type="submit">
         Next

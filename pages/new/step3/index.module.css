@@ -1,0 +1,20 @@
+.location-field-input {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.location-field-input .btn-secondary-remove {
+    align-self: flex-start;
+    margin-top: 25px;
+}
+
+.form-container {
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+  
+.form-container > button {
+    margin-right: 10px;
+}
+  

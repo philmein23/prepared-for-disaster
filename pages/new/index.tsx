@@ -2,15 +2,14 @@ import { useForm } from "react-hook-form";
 import { useStoreActions } from "../../hooks";
 import { useRouter } from "next/router";
 import Address from "../../components/common/Address/Address";
+import { Address as AddressType } from "../../model/userInfo";
 
 import style from "./index.module.css";
 
 export interface StepOneInputs {
   firstName: string;
   lastName: string;
-  address: string;
-  state: string;
-  country: string;
+  address: AddressType;
 }
 
 const FirstStep = () => {
@@ -28,10 +27,10 @@ const FirstStep = () => {
 
   return (
     <form className={style["form-container"]} onSubmit={handleSubmit(onSubmit)}>
-	  <div>
-		  <h2>User Information</h2>
-		  <p>Enter your personal information</p>
-	  </div>
+      <div>
+        <h2>User Information</h2>
+        <p>Enter your personal information</p>
+      </div>
       <div>
         <label htmlFor="first-name">First Name</label>
         <input

@@ -1,5 +1,10 @@
 import { Action, action } from 'easy-peasy';
 
+export interface EmergencyKit {
+	kitName: string;
+	link: string;
+}
+
 export interface Address {
 	street: string;
 	suite: string;
@@ -26,12 +31,10 @@ export interface RallyPoint {
 export interface UserInfo {
 	firstName: string;
 	lastName: string;
-	address: string;
-	state: string;
-	country: string;
+	address: Address;
 	lovedOnes: LovedOne[];
 	rallyPoints: RallyPoint[];
-
+	emergencyKits: EmergencyKit[];
 }
 
 export interface UsersInfoModel {
@@ -48,9 +51,7 @@ const userInfoModel: UsersInfoModel = {
 		state.users.push(payload);
 	}),
 	updateUserInfo: action((state, payload) => {
-		state.newUser = {
-			...payload
-		};
+		state.newUser = { ...payload };
 	})
 };
 
